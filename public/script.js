@@ -1,5 +1,5 @@
 (function() {
-  var ws = new WebSocket(`ws://${location.host}`);
+  var ws = new WebSocket(`wss://${location.host}`);
   var messagesDiv = document.getElementById('the-messages');
   var sendButton = document.getElementById('the-button');
   var textBox = document.getElementById('text-box');

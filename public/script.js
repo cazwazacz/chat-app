@@ -5,9 +5,13 @@
   var textBox = document.getElementById('text-box');
   var nameBox = document.getElementById('name-box');
 
+  function createMessageDiv(name, message) {
+    return `<div><strong>${name}</strong>: ${message}</div>`;
+  }
+
   ws.onmessage = function(event) {
     message = JSON.parse(event.data);
-    messagesDiv.innerHTML += `<li><strong>${message.name}</strong>: ${message.message}</li>`;
+    messagesDiv.innerHTML += createMessageDiv(message.name, message.message);
   };
 
   ws.onopen = function() {

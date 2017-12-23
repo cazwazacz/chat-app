@@ -2,16 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Websocket try</title>
+    <title>Chat app</title>
   </head>
   <body>
-    <h1>Hello there</h1>
-    <input type="text" id="text-box">
+
+    <style>
+      input, button {
+        display: block;
+      }
+    </style>
+
+    <h1>Chat app</h1>
+
+    <input type="text" id="name-box" placeholder="name">
+    <input type="text" id="text-box" placeholder="message">
     <button id="the-button" name="button">send</button>
     <h3>messages</h3>
     <ul id="the-messages">
 
     </ul>
+
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

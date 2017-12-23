@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const url = require('url');
 const WebSocket = require('ws');
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
@@ -26,6 +27,6 @@ wss.on('connection', function connection(ws, req) {
   })
 });
 
-server.listen(8080, function listening() {
+server.listen(PORT, function listening() {
   console.log('Listening on %d', server.address().port);
 });

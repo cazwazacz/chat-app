@@ -2,25 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chat app</title>
   </head>
   <body>
 
     <style>
+      h1, h3 {
+        text-align: center;
+      }
       input, button {
+        margin: 5px;
+        height: 40px;
         display: block;
+        width: 100%;
+        border: 1px solid black;
+      }
+      button {
+        background-color: grey;
+      }
+      #everything {
+        margin: 0 auto;
+        width: 80%;
+      }
+      #the-messages {
+        background-color: rgb(246, 246, 246);
       }
     </style>
 
     <h1>Chat app</h1>
 
-    <input type="text" id="name-box" placeholder="name">
-    <input type="text" id="text-box" placeholder="message">
-    <button id="the-button" name="button">send</button>
-    <h3>messages</h3>
-    <ul id="the-messages">
+    <div id="everything">
+      <input type="text" id="name-box" placeholder="name">
+      <input type="text" id="text-box" placeholder="message">
+      <button id="the-button" name="button">send</button>
+      <h3>Messages</h3>
+      <div id="the-messages">
 
-    </ul>
+      </div>
+    </div>
+
 
     <script type="text/javascript" src="script.js"></script>
   </body>

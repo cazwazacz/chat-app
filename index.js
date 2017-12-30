@@ -4,6 +4,7 @@ const url = require('url');
 const WebSocket = require('ws');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 8080;
+const Message = require('./models/message');
 
 const app = express();
 
@@ -39,6 +40,6 @@ mongoose.connect(databaseUrl, function(err) {
     server.listen(PORT, function listening() {
       console.log('Listening on %d', server.address().port);
     });
-    
+
   }
 });

@@ -18,6 +18,15 @@ mongoose.connect(databaseUrl, function(err) {
 
     app.use(express.static('public'));
 
+
+
+    app.get('/api/messages', function(req, res) {
+      Message.find({}, function(err, messages) {
+        if (err) { return console.log(err) };
+        res.json(messages);
+      })
+    });
+
     const server = http.createServer(app);
     const wss = new WebSocket.Server({ server });
 

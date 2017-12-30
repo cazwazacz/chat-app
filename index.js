@@ -9,7 +9,7 @@ const createMessage = require('./lib/createMessage');
 
 const app = express();
 
-let databaseUrl = 'mongodb://localhost/chat_development';
+let databaseUrl = process.env.MONGO_URI;
 
 mongoose.connect(databaseUrl, function(err) {
   if (err) {

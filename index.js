@@ -8,6 +8,7 @@ const Message = require('./models/message');
 const createMessage = require('./lib/createMessage');
 
 const app = express();
+app.use(express.static('public'));
 
 let databaseUrl = process.env.MONGO_URI;
 
@@ -16,9 +17,6 @@ mongoose.connect(databaseUrl, function(err) {
     console.log(err);
   } else {
     console.log('Successfully connected to database');
-
-    app.use(express.static('public'));
-
 
     app.get('/api/messages', function(req, res) {
       Message.find({}, function(err, messages) {

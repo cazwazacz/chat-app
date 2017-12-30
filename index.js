@@ -5,6 +5,7 @@ const WebSocket = require('ws');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 8080;
 const Message = require('./models/message');
+const createMessage = require('./lib/createMessage');
 
 const app = express();
 
@@ -33,9 +34,7 @@ mongoose.connect(databaseUrl, function(err) {
       const location = url.parse(req.url, true);
 
       ws.on('message', function incoming(data) {
-        Message.create({name: JSON.parse(data).name, body: JSON.parse(data).message}, function(err, message) {
-          if (err) { return console.log(err) };
-        })
+        createMessage(Message, JSON.parse(data).name, JSON.parse(data).message);
         wss.clients.forEach(function each(client) {
           if (client.readyState === WebSocket.OPEN) {
             client.send(data);

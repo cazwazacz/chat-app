@@ -19,7 +19,6 @@ mongoose.connect(databaseUrl, function(err) {
     app.use(express.static('public'));
 
 
-
     app.get('/api/messages', function(req, res) {
       Message.find({}, function(err, messages) {
         if (err) { return console.log(err) };
@@ -34,6 +33,9 @@ mongoose.connect(databaseUrl, function(err) {
       const location = url.parse(req.url, true);
 
       ws.on('message', function incoming(data) {
+        Message.create({name: JSON.parse(data).name, body: JSON.parse(data).message}, function(err, message) {
+          if (err) { return console.log(err) };
+        })
         wss.clients.forEach(function each(client) {
           if (client.readyState === WebSocket.OPEN) {
             client.send(data);

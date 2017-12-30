@@ -20,6 +20,7 @@
   "homepage": "https://github.com/cazwazacz/ws-try#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "mongoose": "^5.0.0-rc0",
     "ws": "^3.3.3"
   }
 }

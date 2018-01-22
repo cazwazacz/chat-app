@@ -1,4 +1,4 @@
-## A rudimentary chat application in node.
+## A rudimentary chat application in node: experimenting with websockets.
 
 It is live [here](https://shielded-brook-20013.herokuapp.com/).
 
